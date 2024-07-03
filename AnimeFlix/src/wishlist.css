@@ -1,0 +1,328 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #303030;
+    padding: 0;
+  }
+  
+header {
+    background-color: #252525;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+h1.logo {
+    margin: 0;
+    font-size: 50px;
+    padding-left: 10px;
+    color: #fff; /* Ensure the text color is white or a light color for contrast */
+    text-shadow: 
+        0 0 2px rgba(255, 255, 255, 0.3), /* Minimal blur and low opacity */
+        0 0 4px rgba(255, 255, 255, 0.2), /* Slightly more blur */
+        0 0 6px rgba(255, 255, 255, 0.1); /* Slightly more blur */
+    }
+
+
+table {
+    margin-top: 2%;
+    width: 80%;
+    margin-left: 10%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #808080; /* Grey color for the table */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(230, 56, 44); /* Gold color for the table header */
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+td {
+    background-color:#333;   
+    border-bottom: 1px solid #0f0101;
+    color: #fff;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+select, input[type="number"], button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 75px;
+}
+
+select {
+    width: 150px;
+    margin-bottom: 60px;
+}
+
+input[type="number"] {
+    width: 100px;
+    margin-bottom: 60px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 60px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #00409a;
+}
+.delete-button {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f; /* Darker red */
+}
+.actions-container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 28px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+    z-index: 2000;
+}
+
+.modal-content {
+    background-color: #303030; /* Dark background color for the modal */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+}
+
+.modal-content h2 {
+    color: wheat; /* Header color */
+    font-size: 24px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+.modal-content label {
+    color: #ddd; /* Light color for labels */
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.modal-content input, .modal-content select {
+    box-sizing: border-box; /* Ensures consistent sizing */
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px; /* Reduced margin to keep elements close */
+    margin-bottom: 10px; /* Added margin to separate elements */
+    border: 1px solid #666; /* Dark border for inputs */
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #444; /* Dark background color for inputs */
+    color: #fff; /* White text color */
+}
+
+.modal-content input:focus, .modal-content select:focus {
+    border-color: #007bff; /* Highlight border color on focus */
+    outline: none;
+    box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+}
+.modal-content button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    padding: 10px; /* Same padding as input */
+    margin-top: 5px; /* Same top margin as input */
+    margin-bottom: 10px; /* Same bottom margin as input */
+    width: 100%;
+}
+
+/* Button hover state */
+.modal-content button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Button active state */
+.modal-content button:active {
+    background-color: #00409a;
+}
+
+.modal-content button:focus {
+    outline: none;
+    box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff; /* Close button color */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.home-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 60px;
+}
+
+.home-link i.fas.fa-home {
+    font-size: 2rem;
+    color: wheat;
+}
+
+.home-link span {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+
+.home-link:hover i.fas.fa-home {
+    color: rgb(252, 183, 55); 
+}
+span{
+    color: red;
+}
+
+h2{
+    color: wheat;
+    font-size: 50px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Basic reset for the footer */
+footer {
+    background-color: #303030;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 300px;
+    padding-bottom: 30px;
+  }
+  
+Footer content styling
+.footer-content p {
+    margin: 0;
+    font-size: 35px;
+    }
+
+
+/* Social media icons styling */
+.social-links a {
+color: #fff;
+margin: 0 10px;
+font-size: 24px;
+text-decoration: none;
+}
+
+.social-links a:hover {
+color: #FDEC57; /* Hover color for social media icons */
+}
+
+/* Social media icons font */
+.fab {
+font-size: 1.5rem; 
+}
+
+.fab.fa-instagram {
+color: #E4405F;
+}
+
+.fab.fa-facebook-f {
+color: #1877F2; 
+}
+
+.fab.fa-twitter {
+color: #1DA1F2;
+}
+
+.fab.fa-linkedin-in {
+color: #0A66C2; 
+}
+
+.fab.fa-youtube {
+color: #FF0000;
+}

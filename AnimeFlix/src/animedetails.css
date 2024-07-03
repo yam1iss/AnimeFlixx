@@ -1,0 +1,365 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #303030;
+}
+
+header {
+    background-color:#252525;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+h1.logo {
+    margin: 0;
+    font-size: 50px;
+    padding-left: 10px;
+    color: #fff; /* Ensure the text color is white or a light color for contrast */
+    text-shadow: 
+        0 0 2px rgba(255, 255, 255, 0.3), /* Minimal blur and low opacity */
+        0 0 4px rgba(255, 255, 255, 0.2), /* Slightly more blur */
+        0 0 6px rgba(255, 255, 255, 0.1); /* Slightly more blur */
+    }
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding-right: 35px;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-link i.fas.fa-home {
+    font-size: 2rem;
+    color: wheat;
+}
+
+.wishlist-link i.fas.fa-heart {
+    font-size: 2rem;
+    color: #ff4d4d;
+}
+
+.home-link span,
+.wishlist-link span {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.home-link:hover i.fas.fa-home {
+    color: rgb(252, 183, 55);
+}
+
+.wishlist-link:hover i.fas.fa-heart {
+    color: #ff1a1a;
+}
+
+.container {
+    max-width: 90%;
+    width: 100%;
+    max-height: 50%;
+    margin: 100px auto 40px auto;
+    padding: 15px;
+    background-color: #252525;
+    border-radius: 8px;
+    display: flex;
+    gap: 20px; /* Added gap between image and details */
+}
+
+.anime-image {
+    flex: 1;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.anime-details {
+    flex: 2;
+}
+
+.anime-details img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-size: 40px;
+    color: wheat;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 13px;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.wishlist-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.wishlist-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.wishlist-button:active {
+    background-color: #00409a;
+}
+
+.wishlist-button.remove {
+    background-color: #ff4d4d;
+}
+
+.wishlist-button.remove:hover {
+    background-color: #ff1a1a;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+    z-index: 2000;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.modal-content {
+    background-color: #303030; /* Dark background color for the modal */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box; /* Ensures consistent sizing */
+}
+
+/* Modal header styling */
+.modal-content h2 {
+    color: wheat; /* Header color */
+    font-size: 24px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+/* Modal content styling */
+.modal-content p {
+    font-size: 1rem;
+    color: #ddd; /* Text color */
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin: 0; /* Remove default margin */
+}
+
+/* Label styling */
+.modal-content label {
+    color: #ddd; /* Light color for labels */
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 15px; /* Increased space below the label */
+    display: block;
+}
+
+/* Input and select styling */
+.modal-content input, 
+.modal-content select, 
+.modal-content button {
+    box-sizing: border-box; /* Ensures consistent sizing */
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    margin-top: 0; /* Increased space above elements */
+    margin-bottom: 15px; /* Added space below the input */
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #fff; /* Text color */
+    background-color: #333; /* Background color for inputs */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Override the default focus style */
+.modal-content input:focus, 
+.modal-content select:focus {
+    border-color: #007bff; /* Border color on focus */
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Custom focus ring */
+}
+
+.modal-content select {
+    appearance: none;
+}
+
+/* Button styling */
+.modal-content button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Button hover state */
+.modal-content button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Button active state */
+.modal-content button:active {
+    background-color: #00409a;
+}
+
+/* Button focus state */
+.modal-content button:focus {
+    outline: none;
+    box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* Placeholder text color */
+.modal-content input::placeholder, 
+.modal-content select::placeholder {
+    color: #999;
+}
+
+
+/* Close button styling */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Close button hover and focus state */
+.close:hover,
+.close:focus {
+    color: #fff; /* Close button color */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.modal-label {
+    display: block;
+    padding-bottom: 0; /* Added space below label */
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: #ddd; /* Label color */
+}
+
+/* Padding for content within modal */
+.modal-content .content {
+    padding: 20px 10; /* Added top and bottom padding */
+}
+/* Footer styling */
+footer {
+    background-color: #333; /* Dark background color for the footer */
+    color: #fff; /* White text color */
+    padding: 20px; /* Space around the content */
+    text-align: center; /* Center the text and content */
+}
+
+/* Footer content styling */
+.footer-content {
+    max-width: 1200px; /* Maximum width of the content */
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+/* Footer text styling */
+.footer-content p {
+    margin: 0;
+    font-size: 15px; /* Adjust font size */
+    text-align: center; /* Center text alignment */
+}
+
+/* Social media icons styling */
+.social-links {
+    margin-top: 10px; /* Space above the social media icons */
+}
+
+.social-links a {
+    color: #fff; /* White color for the icons */
+    margin: 0 10px; /* Space between the icons */
+    font-size: 24px; /* Size of the icons */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.social-links a:hover {
+    color: #FDEC57; /* Hover color for social media icons */
+}
+
+/* Social media icons font */
+.fab {
+    font-size: 1.5rem; 
+}
+
+
+.fab.fa-instagram {
+    color: #E4405F;
+}
+
+.fab.fa-facebook-f {
+    color: #1877F2;
+}
+
+.fab.fa-twitter {
+    color: #1DA1F2;
+}
+
+.fab.fa-linkedin-in {
+    color: #0A66C2; 
+}
+
+.fab.fa-youtube {
+    color: #FF0000;
+}

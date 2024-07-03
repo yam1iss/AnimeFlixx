@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime List</title>
+    <link rel="stylesheet" href="wishlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">Anime<span>Flix</span></h1>
+        <a href="MyAnime.html" class="home-link" title="Home">
+            <i class="fas fa-home"></i>
+            <b><span>HOME</span></b>
+        </a>    
+    </header>
+    <center><h2 style="margin-top: 120px;">My Wishlist</h2></center>
+    <table id="animeTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Episode</th>
+                <th>Rating</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="animeTableBody"></tbody>
+    </table>
+
+    <!-- Modal for updating anime details -->
+    <div id="update-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2>Update Wishlist</h2>
+            <label for="status-select-modal">Status:</label>
+            <select id="status-select-modal">
+                <option value="Watching">Watching</option>
+                <option value="On Hold">On Hold</option>
+                <option value="Plan to Watch">Plan to Watch</option>
+                <option value="Dropped">Dropped</option>
+                <option value="Completed">Completed</option>    
+            </select>
+            <label for="current-episode-modal">Current Episode:</label>
+            <input type="number" id="current-episode-modal" min="1">
+            <label for="rating-modal">Rating:</label>
+            <select id="rating-modal">
+                <option value="1">Bad</option>
+                <option value="2">Poor</option>
+                <option value="3">Average</option>
+                <option value="4">Good</option>
+                <option value="5">Very Good</option>
+            </select>
+            <button id="save-update">Save</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 AnimeFlix. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.youtube.com" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="wishlist.js"></script>
+</body>
+</html>

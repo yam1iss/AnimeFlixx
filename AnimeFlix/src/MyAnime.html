@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeFlix</title>
+    <link rel="stylesheet" href="MyAnime.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">Anime<span style="color: red;">Flix</span></h1>
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <a href="wishlist.html" title="My Wishlist" class="wishlist-link">
+                        <i class="fas fa-heart"></i>
+                        <b><span>WISHLIST</span></b>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <center><h1 style="margin-top: 120px; font-size: 50px; color: white;" class="logo">Anime<span style="color: red;">Flix</span></h1></center>
+    <b> <center><p style="color: white ;font-size: 25px;">Discover Your Next Adventure: Dive into the World of Anime with us!</p></center></b>
+    <div class="search-bar">
+        <input type="text" id="name" placeholder="Search anime....">
+        <button class="search" onclick="buttonClicked()"><i class="fas fa-search"></i></button>
+    </div>
+    <h2 id="search-result">Search result for: <span id="search-query">[Anime Title]</span></h2>
+    <div id="demo"></div>
+    <h2 id="trending">Trending</h2>
+    <div id="top-anime-gallery" class="slideshow-container">
+        <button id="slide-left" class="slide-button">&#10094;</button>
+        <div class="mySlides" id="anime-slides"></div>
+        <button id="slide-right" class="slide-button">&#10095;</button>
+    </div>
+
+    <h2 id="action">Action</h2>
+    <div id="action-gallery" class="slideshow-container">
+        <button id="slide-left-action" class="slide-button">&#10094;</button>
+        <div class="mySlides" id="action-slides"></div>
+        <button id="slide-right-action" class="slide-button">&#10095;</button>
+    </div>
+
+    <h2 id="adventure">Adventure</h2>
+    <div id="adventure-gallery" class="slideshow-container">
+        <button id="slide-left-adventure" class="slide-button">&#10094;</button>
+        <div class="mySlides" id="adventure-slides"></div>
+        <button id="slide-right-adventure" class="slide-button">&#10095;</button>
+    </div>
+
+    <h2 id="comedy">Comedy</h2>
+    <div id="comedy-gallery" class="slideshow-container">
+        <button id="slide-left-comedy" class="slide-button">&#10094;</button>
+        <div class="mySlides" id="comedy-slides"></div>
+        <button id="slide-right-comedy" class="slide-button">&#10095;</button>
+    </div>
+
+    <h2 id="fantasy">Fantasy</h2>
+    <div id="fantasy-gallery" class="slideshow-container">
+        <button id="slide-left-fantasy" class="slide-button">&#10094;</button>
+        <div class="mySlides" id="fantasy-slides"></div>
+        <button id="slide-right-fantasy" class="slide-button">&#10095;</button>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 AnimeFlix. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.youtube.com" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="MyAnime.js"></script>
+</body>
+</html>
